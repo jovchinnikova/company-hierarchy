@@ -12,14 +12,14 @@
             <lastName>Pypkin</lastName>
             <averageSalary>50.0</averageSalary>
             <vacationDuration>28</vacationDuration>
-            <startVacation>2021-11-10</startVacation>
+            <startVacation>2021-11-16T09:00:40.671</startVacation>
         </worker>
         <worker id="2">
             <firstName>Vasiliy</firstName>
             <lastName>Petrov</lastName>
             <averageSalary>30.5</averageSalary>
             <vacationDuration>26</vacationDuration>
-            <startVacation>2021-11-14</startVacation>
+            <startVacation>2021-11-13T09:00:40.671</startVacation>
         </worker>
     </workers>
     <departments>

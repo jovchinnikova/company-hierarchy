@@ -51,9 +51,9 @@
                         <xsd:element name="lastName" type="xsd:string"/>
                         <xsd:element name="averageSalary" type="xsd:double"/>
                         <xsd:element name="vacationDuration" type="xsd:integer"/>
-                        <xsd:element name="startVacation" type="xsd:date"/>
+                        <xsd:element name="startVacation" type="xsd:dateTime"/>
                     </xsd:sequence>
-                    <xsd:attribute name="id" type="xsd:integer"/>
+                    <xsd:attribute name="id" type="xsd:integer" use="required"/>
                 </xsd:complexType>
             </xsd:element>
         </xsd:sequence>

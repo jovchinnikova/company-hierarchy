@@ -11,7 +11,8 @@ public class Worker {
     private Integer vacationDuration;
     private LocalDateTime startVacation;
 
-    public Worker(String firstName, String lastName, double averageSalary) {
+    public Worker(Integer id, String firstName, String lastName, double averageSalary) {
+        this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.averageSalary = averageSalary;
