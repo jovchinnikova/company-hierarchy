@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 
 public class Worker {
 
+    private Integer id;
     private String firstName;
     private String lastName;
     private double averageSalary;
@@ -14,6 +15,14 @@ public class Worker {
         this.firstName = firstName;
         this.lastName = lastName;
         this.averageSalary = averageSalary;
+    }
+
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getFirstName() {

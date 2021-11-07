@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<company phoneNumber="12345" site="solvd.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="file:///D:\Git\git\company-hierarchy\src\main\resources/schema.xsd">
+    <title>Solvd Inc.</title>
+    <director>
+        <firstName>Ivan</firstName>
+        <lastName>Ivanov</lastName>
+    </director>
+    <workers>
+        <worker id="1">
+            <firstName>Petr</firstName>
+            <lastName>Pypkin</lastName>
+            <averageSalary>50.0</averageSalary>
+            <vacationDuration>28</vacationDuration>
+            <startVacation>2021-11-10</startVacation>
+        </worker>
+        <worker id="2">
+            <firstName>Vasiliy</firstName>
+            <lastName>Petrov</lastName>
+            <averageSalary>30.5</averageSalary>
+            <vacationDuration>26</vacationDuration>
+            <startVacation>2021-11-14</startVacation>
+        </worker>
+    </workers>
+    <departments>
+        <department>
+            <title>Quality assurance</title>
+            <services>
+                <service>
+                    <title>manual testing</title>
+                    <price>600.3</price>
+                </service>
+                <service>
+                    <title>automated testing</title>
+                    <price>800.7</price>
+                </service>
+            </services>
+        </department>
+        <department>
+            <title>Software web development</title>
+            <services>
+                <service>
+                    <title>back-end</title>
+                    <price>300.0</price>
+                </service>
+                <service>
+                    <title>front-end</title>
+                    <price>200.0</price>
+                </service>
+            </services>
+        </department>
+    </departments>
+</company>
