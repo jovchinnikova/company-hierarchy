@@ -12,10 +12,6 @@ public class Company {
     private int phoneNumber;
     private String site;
 
-    public Company(String title) {
-        this.title = title;
-    }
-
     public void setTitle(String title) {
         this.title = title;
     }
