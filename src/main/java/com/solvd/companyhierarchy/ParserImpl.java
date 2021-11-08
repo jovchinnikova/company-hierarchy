@@ -6,24 +6,29 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.parsers.SAXParser;
+import javax.xml.parsers.SAXParserFactory;
+import java.io.File;
+import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class XMLHandler extends DefaultHandler {
+public class ParserImpl extends DefaultHandler implements Parser {
 
-    private static final Logger LOGGER = LogManager.getLogger(XMLHandler.class);
+    private static final Logger LOGGER = LogManager.getLogger(ParserImpl.class);
 
     private String element = "";
     private String firstName = "";
     private String lastName = "";
     private String firstNameDir = "";
     private String lastNameDir = "";
-    Set<Worker> workers  = new HashSet<>();
-    List<Service> services = new ArrayList<>();
-    List<Department> departments = new ArrayList<>();
+    private Set<Worker> workers = new HashSet<>();
+    private List<Service> services = new ArrayList<>();
+    private List<Department> departments = new ArrayList<>();
     private double salary;
     private Integer vacDur;
     private LocalDateTime startVac;
@@ -40,18 +45,33 @@ public class XMLHandler extends DefaultHandler {
     }
 
     @Override
-    public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException{
+    public void startElement(String namespaceURI, String localName, String qName, Attributes atts) throws SAXException {
         element = qName;
-        switch(element) {
+        switch (element) {
             case "company":
                 int phoneNumber = Integer.parseInt(atts.getValue("phoneNumber"));
-                String site = atts.getValue("site");
                 company.setPhoneNumber(phoneNumber);
+                String site = atts.getValue("site");
                 company.setSite(site);
                 break;
             case "worker":
                 Integer id = Integer.valueOf(atts.getValue("id"));
                 this.id = id;
+                break;
+            default:
+                break;
+        }
+    }
+
+    @Override
+    public void endElement(String namespaceURI, String localName, String qName) throws SAXException {
+        switch (element) {
+            case "departments":
+                department.setServices(services);
+                departments.add(department);
+                company.setDepartments(departments);
+                break;
+            case "worker":
                 Worker worker = new Worker(id, firstName, lastName, salary);
                 worker.setAverageSalary(salary);
                 worker.setVacationDuration(vacDur);
@@ -65,15 +85,8 @@ public class XMLHandler extends DefaultHandler {
                 Service service = new Service(title, price);
                 services.add(service);
                 break;
-        }
-    }
-
-    @Override
-    public void endElement(String namespaceURI, String localName, String qName) throws SAXException{
-        if(element.equals("departments")){
-                department.setServices(services);
-                departments.add(department);
-                company.setDepartments(departments);
+            default:
+                break;
         }
         element = "";
     }
@@ -117,11 +130,22 @@ public class XMLHandler extends DefaultHandler {
             case "department:title":
                 department = new Department(new String(ch, start, length));
                 break;
+            default:
+                break;
         }
     }
 
     @Override
-    public void endDocument() throws SAXException{
+    public void endDocument() throws SAXException {
         LOGGER.info("Parsing is ended");
+    }
+
+    @Override
+    public Company parse() throws ParserConfigurationException, SAXException, IOException {
+        SAXParserFactory factory = SAXParserFactory.newInstance();
+        SAXParser parser = factory.newSAXParser();
+
+        parser.parse(new File("D:\\Git\\git\\company-hierarchy\\src\\main\\resources\\company.xml"), this);
+        return company;
     }
 }
