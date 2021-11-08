@@ -60,9 +60,11 @@ public class XMLHandler extends DefaultHandler {
                 break;
             case "workers":
                 company.setWorkers(workers);
+                break;
             case "service":
                 Service service = new Service(title, price);
                 services.add(service);
+                break;
         }
     }
 
@@ -90,6 +92,7 @@ public class XMLHandler extends DefaultHandler {
                 break;
             case "director":
                 company.setDirector(new CEO(firstNameDir, lastNameDir));
+                break;
             case "worker:firstName":
                 firstName = new String(ch, start, length);
                 break;
