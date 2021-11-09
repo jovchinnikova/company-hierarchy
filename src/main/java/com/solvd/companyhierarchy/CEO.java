@@ -10,6 +10,11 @@ public class CEO {
         this.lastName = lastName;
     }
 
+    @Override
+    public String toString(){
+        return String.format("%s %s",firstName,lastName);
+    }
+
     public String getFirstName() {
         return firstName;
     }

@@ -3,7 +3,7 @@
     <xsd:element name="company">
         <xsd:complexType>
             <xsd:sequence>
-                <xsd:element name="title" type="xsd:string"/>
+                <xsd:element name="compTitle" type="xsd:string"/>
                 <xsd:element name="director" type="director"/>
                 <xsd:element name="workers" type="workers"/>
                 <xsd:element name="departments" type="departments"/>
@@ -14,8 +14,8 @@
     </xsd:element>
     <xsd:complexType name="director">
         <xsd:sequence>
-            <xsd:element name="firstName" type="xsd:string"/>
-            <xsd:element name="lastName" type="xsd:string"/>
+            <xsd:element name="firstNameDir" type="xsd:string"/>
+            <xsd:element name="lastNameDir" type="xsd:string"/>
         </xsd:sequence>
     </xsd:complexType>
     <xsd:complexType name="services">
@@ -23,7 +23,7 @@
             <xsd:element name="service" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="title" type="xsd:string"/>
+                        <xsd:element name="name" type="xsd:string"/>
                         <xsd:element name="price" type="xsd:double"/>
                     </xsd:sequence>
                 </xsd:complexType>
@@ -35,7 +35,7 @@
             <xsd:element name="department" maxOccurs="unbounded">
                 <xsd:complexType>
                     <xsd:sequence>
-                        <xsd:element name="title" type="xsd:string"/>
+                        <xsd:element name="depTitle" type="xsd:string"/>
                         <xsd:element name="services" type="services"/>
                     </xsd:sequence>
                 </xsd:complexType>

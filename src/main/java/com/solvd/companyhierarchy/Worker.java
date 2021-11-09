@@ -11,11 +11,17 @@ public class Worker {
     private Integer vacationDuration;
     private LocalDateTime startVacation;
 
-    public Worker(Integer id, String firstName, String lastName, double averageSalary) {
+    public Worker(Integer id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
-        this.averageSalary = averageSalary;
+    }
+
+    @Override
+    public String toString(){
+        return "Worker № " + id + " " + firstName + " " + lastName + System.lineSeparator() +
+                "Salary " + averageSalary + System.lineSeparator() +
+                "Vacation will start " + startVacation + " and will last " + vacationDuration;
     }
 
     public Integer getId() {

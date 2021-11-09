@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 <company phoneNumber="12345" site="solvd.com" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:noNamespaceSchemaLocation="file:///D:\Git\git\company-hierarchy\src\main\resources/schema.xsd">
-    <title>Solvd Inc.</title>
+    <compTitle>Solvd Inc.</compTitle>
     <director>
-        <firstName>Ivan</firstName>
-        <lastName>Ivanov</lastName>
+        <firstNameDir>Ivan</firstNameDir>
+        <lastNameDir>Ivanov</lastNameDir>
     </director>
     <workers>
         <worker id="1">
@@ -24,27 +24,27 @@
     </workers>
     <departments>
         <department>
-            <title>Quality assurance</title>
+            <depTitle>Quality assurance</depTitle>
             <services>
                 <service>
-                    <title>manual testing</title>
+                    <name>manual testing</name>
                     <price>600.3</price>
                 </service>
                 <service>
-                    <title>automated testing</title>
+                    <name>automated testing</name>
                     <price>800.7</price>
                 </service>
             </services>
         </department>
         <department>
-            <title>Software web development</title>
+            <depTitle>Software web development</depTitle>
             <services>
                 <service>
-                    <title>back-end</title>
+                    <name>back-end</name>
                     <price>300.0</price>
                 </service>
                 <service>
-                    <title>front-end</title>
+                    <name>front-end</name>
                     <price>200.0</price>
                 </service>
             </services>

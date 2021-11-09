@@ -11,6 +11,12 @@ public class Department {
         this.title = title;
     }
 
+    @Override
+    public String toString(){
+        return title + " department provides services:" + System.lineSeparator() +
+                services;
+    }
+
     public String getTitle() {
         return title;
     }

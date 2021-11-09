@@ -17,7 +17,10 @@ public class Main {
         LOGGER.info(comp.getTitle());
         LOGGER.info(comp.getPhoneNumber());
         LOGGER.info(comp.getSite());
-        LOGGER.info(comp.getDirector().getFirstName());
-        LOGGER.info(comp.getDirector().getLastName());
+        LOGGER.info(comp.getDirector());
+        comp.getWorkers()
+                .forEach(worker -> LOGGER.info(worker));
+        comp.getDepartments()
+                .forEach(department -> LOGGER.info(department));
     }
     }

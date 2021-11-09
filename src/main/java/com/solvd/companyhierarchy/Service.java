@@ -10,6 +10,11 @@ public class Service {
         this.price = price;
     }
 
+    @Override
+    public String toString(){
+        return title + " costs " + price;
+    }
+
     public void setTitle(String title) {
         this.title = title;
     }
