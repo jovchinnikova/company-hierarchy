@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;
 
 import javax.xml.parsers.ParserConfigurationException;
+import java.io.File;
 import java.io.IOException;
 
 public class Main {
@@ -12,15 +13,16 @@ public class Main {
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
 
     public static void main(String[] args) throws ParserConfigurationException, IOException, SAXException {
-        Parser parsing = new ParserImpl();
-        Company comp = parsing.parse();
-        LOGGER.info(comp.getTitle());
-        LOGGER.info(comp.getPhoneNumber());
-        LOGGER.info(comp.getSite());
-        LOGGER.info(comp.getDirector());
-        comp.getWorkers()
+        File file = new File("D:\\Git\\git\\company-hierarchy\\src\\main\\resources\\company.xml");
+        Parser SAXParser = new SAXParser();
+        Company company = SAXParser.parse(file);
+        LOGGER.info(company.getTitle());
+        LOGGER.info(company.getPhoneNumber());
+        LOGGER.info(company.getSite());
+        LOGGER.info(company.getDirector());
+        company.getWorkers()
                 .forEach(worker -> LOGGER.info(worker));
-        comp.getDepartments()
+        company.getDepartments()
                 .forEach(department -> LOGGER.info(department));
     }
     }

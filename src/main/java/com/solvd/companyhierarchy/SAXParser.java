@@ -7,16 +7,15 @@ import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
 import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
 import java.io.IOException;
 import java.time.LocalDateTime;
 import java.util.*;
 
-public class ParserImpl extends DefaultHandler implements Parser {
+public class SAXParser extends DefaultHandler implements Parser {
 
-    private static final Logger LOGGER = LogManager.getLogger(ParserImpl.class);
+    private static final Logger LOGGER = LogManager.getLogger(SAXParser.class);
 
     private StringBuilder value;
     private String depTitle;
@@ -137,11 +136,11 @@ public class ParserImpl extends DefaultHandler implements Parser {
     }
 
     @Override
-    public Company parse() throws ParserConfigurationException, SAXException, IOException {
+    public Company parse(File file) throws ParserConfigurationException, SAXException, IOException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
-        SAXParser parser = factory.newSAXParser();
+        javax.xml.parsers.SAXParser parser = factory.newSAXParser();
 
-        parser.parse(new File("D:\\Git\\git\\company-hierarchy\\src\\main\\resources\\company.xml"), this);
+        parser.parse(file, this);
         return company;
     }
 }
