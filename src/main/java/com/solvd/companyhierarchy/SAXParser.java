@@ -6,6 +6,7 @@ import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
 import org.xml.sax.helpers.DefaultHandler;
 
+import javax.xml.bind.JAXBException;
 import javax.xml.parsers.ParserConfigurationException;
 import javax.xml.parsers.SAXParserFactory;
 import java.io.File;
@@ -136,7 +137,7 @@ public class SAXParser extends DefaultHandler implements Parser {
     }
 
     @Override
-    public Company parse(File file) throws ParserConfigurationException, SAXException, IOException {
+    public Company parse(File file) throws ParserConfigurationException, SAXException, IOException, JAXBException {
         SAXParserFactory factory = SAXParserFactory.newInstance();
         javax.xml.parsers.SAXParser parser = factory.newSAXParser();
 

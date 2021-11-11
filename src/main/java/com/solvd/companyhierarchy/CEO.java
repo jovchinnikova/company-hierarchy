@@ -1,9 +1,20 @@
 package com.solvd.companyhierarchy;
 
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
+@XmlAccessorType(XmlAccessType.FIELD)
 public class CEO {
 
+    @XmlElement(name = "firstNameDir")
     private String firstName;
+    @XmlElement(name = "lastNameDir")
     private String lastName;
+
+    public CEO(){
+
+    }
 
     public CEO(String firstName, String lastName) {
         this.firstName = firstName;
@@ -31,4 +42,3 @@ public class CEO {
         this.lastName = lastName;
     }
 }
-
