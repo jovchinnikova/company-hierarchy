@@ -1,5 +1,8 @@
 package com.solvd.companyhierarchy;
 
+import com.solvd.companyhierarchy.parsers.JaxbParser;
+import com.solvd.companyhierarchy.parsers.Parser;
+import com.solvd.companyhierarchy.parsers.SAXParser;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.xml.sax.SAXException;

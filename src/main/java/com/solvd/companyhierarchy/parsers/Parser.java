@@ -1,5 +1,6 @@
-package com.solvd.companyhierarchy;
+package com.solvd.companyhierarchy.parsers;
 
+import com.solvd.companyhierarchy.Company;
 import org.xml.sax.SAXException;
 
 import javax.xml.bind.JAXBException;

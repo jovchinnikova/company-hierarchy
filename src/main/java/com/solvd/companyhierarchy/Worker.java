@@ -1,5 +1,7 @@
 package com.solvd.companyhierarchy;
 
+import com.solvd.companyhierarchy.parsers.DateTimeAdapter;
+
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDateTime;
