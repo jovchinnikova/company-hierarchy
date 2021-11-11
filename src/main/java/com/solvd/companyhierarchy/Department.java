@@ -1,13 +1,22 @@
 package com.solvd.companyhierarchy;
 
+import javax.xml.bind.annotation.*;
 import java.util.List;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Department {
 
+    @XmlElement(name = "depTitle")
     private String title;
+    @XmlElementWrapper
+    @XmlElement(name = "service")
     private List<Service> services;
 
-    Department(String title) {
+    public Department(){
+
+    }
+
+    public Department(String title) {
         this.title = title;
     }
 

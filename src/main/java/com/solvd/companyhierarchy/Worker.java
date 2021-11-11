@@ -1,15 +1,29 @@
 package com.solvd.companyhierarchy;
 
+import javax.xml.bind.annotation.*;
+import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
 import java.time.LocalDateTime;
 
+@XmlAccessorType(XmlAccessType.FIELD)
 public class Worker {
 
+    @XmlAttribute
     private Integer id;
+    @XmlElement
     private String firstName;
+    @XmlElement
     private String lastName;
+    @XmlElement
     private double averageSalary;
+    @XmlElement
     private Integer vacationDuration;
+    @XmlElement(name = "startVacation",required = true)
+    @XmlJavaTypeAdapter(DateTimeAdapter.class)
     private LocalDateTime startVacation;
+
+    public Worker(){
+
+    }
 
     public Worker(Integer id, String firstName, String lastName) {
         this.id = id;
