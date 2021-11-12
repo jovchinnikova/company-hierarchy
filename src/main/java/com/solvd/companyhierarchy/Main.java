@@ -1,5 +1,6 @@
 package com.solvd.companyhierarchy;
 
+import com.solvd.companyhierarchy.parsers.JacksonParser;
 import com.solvd.companyhierarchy.parsers.JaxbParser;
 import com.solvd.companyhierarchy.parsers.Parser;
 import com.solvd.companyhierarchy.parsers.SAXParser;
@@ -20,6 +21,7 @@ public class Main {
         File file = new File("D:\\Git\\git\\company-hierarchy\\src\\main\\resources\\company.xml");
         Parser SAXParser = new SAXParser();
         Company company = SAXParser.parse(file);
+        LOGGER.info("SAX parser");
         LOGGER.info(company.getTitle());
         LOGGER.info(company.getPhoneNumber());
         LOGGER.info(company.getSite());
@@ -30,7 +32,7 @@ public class Main {
                 .forEach(department -> LOGGER.info(department));
         System.out.println();
 
-        LOGGER.info("JaxbParser");
+        LOGGER.info("Jaxb parser");
         Parser jaxbParser = new JaxbParser();
         Company company2 = jaxbParser.parse(file);
         LOGGER.info(company2.getTitle());
@@ -40,6 +42,20 @@ public class Main {
         company2.getWorkers()
                 .forEach(worker -> LOGGER.info(worker));
         company2.getDepartments()
+                .forEach(department -> LOGGER.info(department));
+        System.out.println();
+
+        LOGGER.info("Jackson parser");
+        Parser jacksonParser = new JacksonParser();
+        File file2 = new File("D:\\Git\\git\\company-hierarchy\\src\\main\\resources\\company.json");
+        Company company3 = jacksonParser.parse(file2);
+        LOGGER.info(company3.getTitle());
+        LOGGER.info(company3.getPhoneNumber());
+        LOGGER.info(company3.getSite());
+        LOGGER.info(company3.getDirector());
+        company3.getWorkers()
+                .forEach(worker -> LOGGER.info(worker));
+        company3.getDepartments()
                 .forEach(department -> LOGGER.info(department));
     }
     }

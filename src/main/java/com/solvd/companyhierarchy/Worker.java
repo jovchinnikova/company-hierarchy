@@ -1,6 +1,9 @@
 package com.solvd.companyhierarchy;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.solvd.companyhierarchy.parsers.DateTimeAdapter;
+import com.solvd.companyhierarchy.parsers.DateTimeDeserialize;
 
 import javax.xml.bind.annotation.*;
 import javax.xml.bind.annotation.adapters.XmlJavaTypeAdapter;
@@ -21,6 +24,7 @@ public class Worker {
     private Integer vacationDuration;
     @XmlElement(name = "startVacation",required = true)
     @XmlJavaTypeAdapter(DateTimeAdapter.class)
+    @JsonDeserialize(using = DateTimeDeserialize.class)
     private LocalDateTime startVacation;
 
     public Worker(){

@@ -1,0 +1,55 @@
+{
+  "title": "Solvd Inc.",
+  "site": "solvd.com",
+  "phoneNumber": 12345,
+  "director": {
+    "firstName": "Ivan",
+    "lastName": "Ivanov"
+  },
+  "worker": [
+    {
+      "id": 1,
+      "firstName": "Petr",
+      "lastName": "Pypkin",
+      "averageSalary": 50.0,
+      "vacationDuration": 28,
+      "startVacation": "2021-11-16T09:00:40.671"
+    },
+    {
+      "id": 2,
+      "firstName": "Vasiliy",
+      "lastName": "Petrov",
+      "averageSalary": 30.5,
+      "vacationDuration": 26,
+      "startVacation": "2021-11-13T09:00:40.671"
+    }
+  ],
+  "department": [
+    {
+      "title": "Quality assurance",
+      "service": [
+        {
+          "title": "manual testing",
+          "price": 600.3
+        },
+        {
+          "title": "automated testing",
+          "price": 800.7
+        }
+      ]
+    },
+    {
+      "title": "Software web development",
+      "service": [
+        {
+          "title": "back-end",
+          "price": 300.0
+        },
+        {
+          "title": "front-end",
+          "price": 200.0
+        }
+      ]
+    }
+  ]
+}
