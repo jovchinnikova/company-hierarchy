@@ -1,6 +1,5 @@
 package com.solvd.companyhierarchy;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import com.solvd.companyhierarchy.parsers.DateTimeAdapter;
 import com.solvd.companyhierarchy.parsers.DateTimeDeserialize;
@@ -14,14 +13,12 @@ public class Worker {
 
     @XmlAttribute
     private Integer id;
-    @XmlElement
+
     private String firstName;
-    @XmlElement
     private String lastName;
-    @XmlElement
     private double averageSalary;
-    @XmlElement
     private Integer vacationDuration;
+
     @XmlElement(name = "startVacation",required = true)
     @XmlJavaTypeAdapter(DateTimeAdapter.class)
     @JsonDeserialize(using = DateTimeDeserialize.class)

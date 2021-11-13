@@ -1,7 +1,5 @@
 package com.solvd.companyhierarchy;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 import javax.xml.bind.annotation.*;
 import java.util.List;
 
@@ -10,9 +8,9 @@ public class Department {
 
     @XmlElement(name = "depTitle")
     private String title;
+
     @XmlElementWrapper
     @XmlElement(name = "service")
-    @JsonProperty("service")
     private List<Service> services;
 
     public Department(){
